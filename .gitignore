@@ -9,6 +9,9 @@ __pycache__/
 # JSweet temporary files
 frontend/.jsweet/
 
+# Django static files (these are collected automaticaly, and are not source code)
+backend/Django/logsyllogsite/static/
+
 # C extensions
 *.so
 
