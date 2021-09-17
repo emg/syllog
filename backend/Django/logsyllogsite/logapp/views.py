@@ -3,7 +3,8 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth.models import User, Group
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
+
 import datetime
 
 
@@ -38,7 +39,8 @@ artificialterm2string = {
 }    
 
 def root_view(request):
-    return HttpResponseRedirect('/webapp/') # Just redirect
+    return render(request, 'index.html')
+
 
 def getValue(request, key, bValid):
     if not bValid:
@@ -274,7 +276,6 @@ def dump(request):
         return HttpResponseRedirect('/test2018/')
     else:
         import csv
-        from django.http import HttpResponse
 
         answer_list = list(Answer.objects.all())
         
@@ -337,7 +338,6 @@ def dump2(request):
         return HttpResponseRedirect('/test2018/')
     else:
         import csv
-        from django.http import HttpResponse
 
         answer_list = Answer2.objects.all().order_by("id")
         
@@ -498,7 +498,6 @@ def dump3_super(request, bAggregateSessions):
         return HttpResponseRedirect('/test2018/')
     else:
         import csv
-        from django.http import HttpResponse
 
         answer_list = Answer3.objects.all().order_by("id")
         
@@ -663,7 +662,6 @@ def dump3_syllogism_based_super(request, bDoValidSyllogismsOnly, start_date, end
         return HttpResponseRedirect('/test2018/')
     else:
         import csv
-        from django.http import HttpResponse
 
         answer_list = Answer3.objects.all().order_by("id")
         
@@ -788,7 +786,6 @@ def dump4_super(request, bAggregateSessions):
         return HttpResponseRedirect('/test2018/')
     else:
         import csv
-        from django.http import HttpResponse
 
         answer_list = Answer4.objects.all().order_by("id")
         
@@ -950,7 +947,6 @@ def dump5_super(request, bAggregateSessions):
         return HttpResponseRedirect('/test2018/')
     else:
         import csv
-        from django.http import HttpResponse
 
         answer_list = Answer5.objects.all().order_by("id")
         
