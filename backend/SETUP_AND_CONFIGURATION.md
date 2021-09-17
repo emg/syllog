@@ -189,7 +189,7 @@ $ sudo mkdir syllog
 $ sudo chown -R root:www-data syllog
 $ sudo chmod -R 6755 syllog
 $ cd syllog
-$ for fd in index.html 2015 proof  target test2015a  test2015b test2018 test6  test8 webapp; do sudo ln -s ../../git/syllog/frontend/$fd . ; done
+$ for d in 2015 proof  target test2015a  test2015b test2018 test6  test8 webapp; do sudo ln -s ../../git/syllog/frontend/$d . ; done
 $ sudo ln -s ../../git/syllog/backend/Django/logsyllogsite/static .
 ```
 
