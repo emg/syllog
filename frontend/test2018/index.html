@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<head>
+<title>Syllog</title>
+<!--
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="shortcut icon" href="logo.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+-->
+</head>
+
+<body>
+  <h1>Welcome to Syllog</h1>
+	<!-- used to show the jQuery candy (see the QuickStart class) -->
+	<div>
+	  <div>
+	    <button type="button" onclick="writeSyllogism();">New syllogism</button>
+	    <button type="button" onclick="reactionValid();">Valid</button>
+	    <button type="button" onclick="reactionInvalid();">Invalid</button>
+	  </div>
+	</div>
+	<pre id="console"></pre>
+
+	<!-- The transpiled output of the PPCGJS.java source file (mvn generate-sources) -->
+	<script type="text/javascript"
+		src="../target/js/bundle.js"></script>
+
+	<script type="text/javascript"
+		src="main.js"></script>
+
+</body>
+</html>
