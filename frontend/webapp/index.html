@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<head>
+<title>Syllog</title>
+<!--
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="shortcut icon" href="logo.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+-->
+</head>
+
+<body>
+  <h1>Welcome to Syllog</h1>
+	<!-- used to show the jQuery candy (see the QuickStart class) -->
+	<div>
+	  <div>
+	    <button type="button" onclick="writeSyllogism();">New syllogism</button>
+	    <button type="button" onclick="reactionValid();">Valid</button>
+	    <button type="button" onclick="reactionInvalid();">Invalid</button>
+	    <button type="button" onclick="clearConsole();">Clear</button>
+	    <button type="button" onclick="writeHelp();">Help</button>
+	  </div>
+	</div>
+	<pre id="console"></pre>
+
+	<!-- The transpiled output of the PPCGJS.java source file (mvn generate-sources) -->
+	<script type="text/javascript"
+		src="../target/js/bundle.js"></script>
+
+	<script type="text/javascript"
+		src="main.js"></script>
+
+	<div id="sound"></div>
+
+	<p style='font-size:0.7em; color:#cccccc;'><em>When you get 10 answers right, straight in a row, a sound will play. Copyright (2019) by Ulrik Sandborg-Petersen. Dedicated to the Public Domain via a Creative Commons CC0 license.</em></p>
+</body>
+</html>
