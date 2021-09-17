@@ -369,9 +369,9 @@ myurlbase(_urlbase) :-
 	concat(_url, "/logsyllog/log3/?", _urlbase).
 
 sendURL(_query) :-
-    myurlbase(_urlstring1),
-    concat(_urlstring1, _query, _urlstring),
-    external("visitURL", (_urlstring), _X).
+        myurlbase(_urlstring1),
+        concat(_urlstring1, _query, _urlstring),
+        external("visitURL", (_urlstring), _X).
 
 
 `;
