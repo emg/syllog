@@ -99,6 +99,7 @@ def log(request):
         return render(request, 'log.html')
 
 def log3(request):
+    """This is the endpoint for most version of Syllog."""
     if request.method == "GET":
         bValid = True
         (usernumber_str, bValid) = getValue(request, u"uid", bValid)
@@ -197,6 +198,18 @@ def log5(request):
         return render(request, 'log.html')
 
 def log4(request):
+    """This is the endpoint for the versions of Syllog that allow a
+    student first to try to prove the syllogism valid or invalid,
+    using the rules: Trans, Subst, Contra, Ex, and (optionally) Mut.
+
+    The following front-end endpoints were meant for this view:
+
+    - proof
+    - test6
+    - test8
+
+    """
+    
     if request.method == "GET":
         bValid = True
         (usernumber_str, bValid) = getValue(request, u"uid", bValid)

@@ -24,6 +24,9 @@ class Answer2(models.Model):
         return "%d: %s: %d/%d: correct: %s conclusion: %s S: %s M: %s P: %s" % (self.answer.usernumber, self.answer.date, self.answer.figure, self.answer.syllnumber, self.answer.correctness, self.conclusion_truth_value, self.term_S, self.term_M, self.term_P)
 
 class Answer3(models.Model):
+    """Answer3 is the model used for all versions of the syllogistic 
+    valid/invalid experiments since around 2015."""
+    
     QUANTOR_CHOICES = (
         ('au', 'All'),
         ('iu', 'Some'),
@@ -102,6 +105,20 @@ class Answer5(models.Model):
         return "%d: %s: (%d,%s,%s,%s): correct: %s conclusion: %s answer: %s propkind: %s S: %s M: %s P: %s" % (self.usernumber, self.date, self.figure, self.quantor_1, self.quantor_2, self.quantor_3, self.correctness, self.conclusion_truth_value, self.student_answer, self.propkind, self.term_S, self.term_M, self.term_P)
 
 class Answer4(models.Model):
+    """Answer4 is for logging the experiments that determine whether
+    students are able to prove that a syllogism is valid or invalid,
+    using the rules Trans, Subst, Contra, Ex and (optionally) Mut.
+
+    This is logged with the /logsyllog/log4/ URL.
+
+    The following front-ends (at a minimum) were meant for this model:
+
+    - test6
+    - test8
+    - proof
+
+    """
+
     QUANTOR_CHOICES = (
         ('au', 'All'),
         ('iu', 'Some'),
