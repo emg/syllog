@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<head>
+<title>Syllog: Proving Syllogisms</title>
+</head>
+
+<body>
+  <h1>Proving Syllogisms</h1>
+
+  <p>There are 11 buttons in the present system. Their use can be explained in the following manner:</p>
+
+  <table border="1" cellpadding="10">
+    <tr><td>
+  <h2>Clear</h2>
+  <p>Clears the screen.</p>
+  </td>
+
+      <td>
+  <h2>New</h2><p>
+	  Picks a new syllogism at random.</p>
+      </td>
+      <td>
+  <h2>Help</h2><p>
+	  Displays a help message.</p>
+      </td>
+      </tr>
+      </table>
+
+  <table border="1" cellpadding="10">
+    <tr><td width="33%" valign="top">
+	
+	<h2>Trans</h2>
+	
+	<p>Will - if possible - prove new propositions using the following deduction:</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">All Y are Z</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">All X are Y</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">Therefore: All X are Z</p>
+      </td>
+      <td width="33%" valign="top">
+	
+	<h2>Subst</h2>
+	<p>Will - if possible - prove new propositions using the following deduction:</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">All Y are Z</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">Some X are Y</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">Therefore: Some X are Z</p>
+      </td>
+      <td valign="top">
+    <h2>Contra</h2>
+    
+    <p>Will - if possible - prove new propositions using the following deduction:</p>
+    <p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">All X are Y</p>
+    <p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">Therefore: All non-Y are non-X</p>
+    <p>(Here, non-X corresponds to the set of elements not belonging to X.)</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="33%" valign="top">
+	
+	<h2>Mut</h2>
+	<p>Will - if possible - prove new propositions using the following deduction:</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">Some X are Y</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">Therefore: Some Y are X</p>
+      </td>
+      <td width="33%" valign="top">
+	
+	<h2>Ex</h2>
+	<p>Will - if possible - prove new propositions using the following deduction:</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">All X are Y</p>
+	<p style="margin-left: 50px; margin-top: 0; margin-bottom: 0;">Therefore:Some X are Y</p>
+      </td>
+      
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+
+  <h2>Buttons for final decision</h2>
+  <p>When you have explored the provability of the syllogism in question, it should be evaluated.</p>
+  <p>Use the button...</p>
+
+  <ul>
+    <li><span style="font-weight: bold;">Invalid</span>, if you after your explorarion find that the syllogism in question is invalid.</li>
+    <li><span style="font-weight: bold;">Valid (Ex is needed)</span>,&nbsp; if you think that the syllogism in question is provable only if Ex is allowed.</li>
+    <li><span style="font-weight: bold;">Valid (Ex is not needed)</span>, if you think that the syllogism in question is provable without the use of Ex.</li>
+  </ul>
+  
+  <br><br>
+<h2>Use the system below</h2>
+  
+	<div>
+	  <div>
+	    <button type="button" onclick="clearConsole();">Clear</button>
+	    <button type="button" onclick="writeNewProof();">New</button>
+	    <button type="button" onclick="writeHelp();">Help</button>
+	    <br>
+	    <button type="button" onclick="applyTrans();">Trans</button>
+	    <button type="button" onclick="applySubst();">Subst</button>
+	    <button type="button" onclick="applyContra();">Contra</button>
+	    <button type="button" onclick="applyMut();">Mut</button>
+	    <button type="button" onclick="applyEx();">Ex</button>
+	    <br>
+	    <button type="button" onclick="applyInvalid();">Invalid</button>
+	    <button type="button" onclick="applyXValid();">Valid (Ex needed)</button>
+	    <button type="button" onclick="applyMValid();">Valid (Ex not needed)</button>
+	    
+	  </div>
+	</div>
+	<pre id="console"></pre>
+
+	<!-- The transpiled output of the PPCGJS.java source file (mvn generate-sources) -->
+	<script type="text/javascript"
+		src="../target/js/bundle.js"></script>
+
+	<script type="text/javascript"
+		src="main.js"></script>
+</body>
+</html>
