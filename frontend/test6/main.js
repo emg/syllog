@@ -571,11 +571,11 @@ apply_invalid:- answer_given(0), to_be_proved(syl(_U1, _U2, _U3,_)),
 	syl_ext_validity(2,_U1, _U2, _U3), nl,
 	write("Correct! This is an invalid syllogism."), 
 	nl, react_correct, 
-	log_answer2(invalid,true),
+	// log_answer2(invalid,true),
 	/,nl. 
 apply_invalid:- answer_given(0), write("No, this is wrong! This is in fact a valid syllogism."), 
 	nl, react_incorrect, 
-	log_answer2(invalid,false),
+	// log_answer2(invalid,false),
 	/,nl.
 
 react_correct :- update_score, write_total_score,  update_total, update_answer_given1, write_next.
@@ -593,19 +593,19 @@ apply_xvalid:-
 	answer_given(0), to_be_proved(syl(_U1, _U2, _U3,_)), 
 	syl_ext_validity(0,_U1, _U2, _U3), nl,
 	write("Correct! This syllogism is provable only if Ex is allowed."), 
-	log_answer2(only_provable_with_ex,true),
+	// log_answer2(only_provable_with_ex,true),
 	nl, react_correct,/. 
 apply_xvalid:- answer_given(0), write("No, this is wrong! "), write_explanation, nl, react_incorrect,  
-	log_answer2(only_provable_with_ex,false),
+	// log_answer2(only_provable_with_ex,false),
 	/, nl.
 
 apply_mvalid:- answer_given(0), to_be_proved(syl(_U1, _U2, _U3,_)), 
 	syl_ext_validity(1,_U1, _U2, _U3), nl,
 	write("Correct! This syllogism is provable without Ex."), 
-	log_answer2(provable_without_ex,true),
+	// log_answer2(provable_without_ex,true),
 	nl, react_correct, /. 
 apply_mvalid:- answer_given(0), write("No, this is wrong! "), write_explanation, nl, react_incorrect,  
-	log_answer2(provable_without_ex,false),
+	// log_answer2(provable_without_ex,false),
 	nl, /.
 
 `;
