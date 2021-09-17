@@ -38,7 +38,7 @@ artificialterm2string = {
 }    
 
 def root_view(request):
-    return HttpResponseRedirect('/test2019/') # Just redirect
+    return HttpResponseRedirect('/webapp/') # Just redirect
 
 def getValue(request, key, bValid):
     if not bValid:
