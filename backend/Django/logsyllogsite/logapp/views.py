@@ -39,7 +39,7 @@ artificialterm2string = {
 }    
 
 def root_view(request):
-    return render(request, 'index.html')
+    return HttpResponseRedirect('/syllog/index.html')
 
 
 def getValue(request, key, bValid):
