@@ -273,7 +273,7 @@ def getCorrectness(result, usernumber, date, figure, syllnumber):
 
 def dump(request):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect('/test2018/')
+        return root_view(request)
     else:
         import csv
 
@@ -335,7 +335,7 @@ def dump(request):
         
 def dump2(request):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect('/test2018/')
+        return root_view(request)
     else:
         import csv
 
@@ -495,7 +495,7 @@ def dump3_aggregatesess(request):
 
 def dump3_super(request, bAggregateSessions):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect('/test2018/')
+        return root_view(request)
     else:
         import csv
 
@@ -659,7 +659,7 @@ def dump3_syllogism_based_valid_and_invalid_dates(request, start_date, end_date)
 
 def dump3_syllogism_based_super(request, bDoValidSyllogismsOnly, start_date, end_date):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect('/test2018/')
+        return root_view(request)
     else:
         import csv
 
@@ -783,7 +783,7 @@ def dump4_aggregatesess(request):
     
 def dump4_super(request, bAggregateSessions):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect('/test2018/')
+        return root_view(request)
     else:
         import csv
 
@@ -944,7 +944,7 @@ def dump5_aggregatesess(request):
     
 def dump5_super(request, bAggregateSessions):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect('/test2018/')
+        return root_view(request)
     else:
         import csv
 
