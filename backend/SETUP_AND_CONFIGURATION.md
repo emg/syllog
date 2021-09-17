@@ -54,7 +54,9 @@ $ createuser --interactive --pwprompt
 Enter name of role to add: syllog
 Enter password for new role: <make up something, or use random.org>
 Enter it again: <repeat same password>
-Shall the new role be a superuser? (y/n) y
+Shall the new role be a superuser? (y/n) n
+Shall the new role be allowed to create databases? (y/n) y
+Shall the new role be allowed to create more new roles? (y/n) n
 ```
 
 Create the the database 'syllog' owned by the user 'syllog'
@@ -120,12 +122,14 @@ $ cd /srv/web/default/git/syllog/backend/Django/logsyllogsite/logsyllogsite
 $ sudo cp local_settings.py.template local_settings.py
 ```
 
-Now edit the loca_settings.py for your needs. Especially set:
+Now edit the local_settings.py for your needs. Especially set:
 
 - ALLOWED_HOSTS must contain the ServerName (DNS entry) of your web server.
 - Set DEBUG = False
 - Set DEV = False
 - Set the PostgreSQL connection info, including password
+- Set SECRET_KEY. See the instructions in the local_settings.py file for
+  generating a valid SECRET_KEY.
 
 ```
 $ sudo vi local_settings.py
@@ -133,19 +137,22 @@ $ sudo vi local_settings.py
 
 ## Set up the Django database
 
-First create the database
+First create the database. Since this will write to the webserver's
+space, owned by the root user and the www-data group, we need to first
+become root. This is done with sudo -s.
 
 ```
-$ source /srv/web/default/virtualenv/bin/activate
-$ cd /srv/web/default/git/syllog/backend/Django/logsyllogsite
-$ python3 manage.py migrate
+$ sudo -s
+# source /srv/web/default/virtualenv/bin/activate
+# cd /srv/web/default/git/syllog/backend/Django/logsyllogsite
+# python3 manage.py migrate
 ```
 
-Then, while still having the virtualenv activated, create the web site
-Django admin superuser:
+Then, while still having the virtualenv activated, and while still
+being root, create the web site Django admin superuser:
 
 ```
-$ python3 manage.py createsuperuser
+# python3 manage.py createsuperuser
 ```
 
 ## Collect Django static files
@@ -182,9 +189,7 @@ $ sudo mkdir syllog
 $ sudo chown -R root:www-data syllog
 $ sudo chmod -R 6755 syllog
 $ cd syllog
-$ sudo ln -s ../../git/syllog/frontend/index.html 
-$ sudo ln -s ../../git/syllog/frontend/webapp/ ./applet
-$ sudo ln -s ../../git/syllog/frontend/target/ .
+$ for fd in index.html 2015 proof  target test2015a  test2015b test2018 test6  test8 webapp; do sudo ln -s ../../git/syllog/frontend/$fd . ; done
 $ sudo ln -s ../../git/syllog/backend/Django/logsyllogsite/static .
 ```
 
