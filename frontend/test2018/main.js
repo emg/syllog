@@ -8,6 +8,12 @@ var program = `
 // See LICENSE in the Syllog distribution.
 //
 
+// Configure the web server URL
+// 
+// Put your own URL here.
+web_server_url(_url) :- concat("https:/", "/logic.aau.dk/syllog", _url).
+
+
 
 term(1, "males").
 term(2, "females").
@@ -343,8 +349,11 @@ log_answer(_validity, _correct) :-
 	sendURL(_query).
 
 myurlbase(_urlbase) :-
-	// This hack is necessary because https:// is read as https: followed by a comment!
-	concat("https:/", "/syllog.emergence.dk/logsyllog/log3/?", _urlbase).
+        // First get the url of the web server installation, defined 
+        // at the top of this file.
+        web_server_url(_url),
+        // Now build the rest of it.
+	concat(_url, "/logsyllog/log3/?", _urlbase).
 
 sendURL(_query) :-
     myurlbase(_urlstring1),
