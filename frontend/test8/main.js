@@ -611,11 +611,12 @@ function playSound(filename) {
 }
 
 function visitURL(url) {
+    console.log("UP210: url = " + url);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
-	    // document.getElementById("demo").innerHTML = this.responseText;
-	    // console.log("UP210: response = " + this.responseText);
+	    document.getElementById("demo").innerHTML = this.responseText;
+	    console.log("UP210: response = " + this.responseText);
 	}
     };
     var myurl;
@@ -624,7 +625,7 @@ function visitURL(url) {
     } else {
 	myurl = url;
     }
-    // console.log("UP200: myurl = '" + myurl + "'");
+    console.log("UP200: myurl = '" + myurl + "'");
     xhttp.open("GET", myurl, true);
     xhttp.send();
     return false;
