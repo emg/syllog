@@ -236,8 +236,8 @@ generate_uid_if_not_there_already.
 
 // Get current time in Unix epoch milliseconds
 get_time_now(_milliseconds_unix_epoch) :-
-	// Get system time since January 1, 1970, midnight UTC.
-	execMethod(_milliseconds_unix_epoch, "java.lang.System", "currentTimeMillis", ()).
+        // Get system time since January 1, 1970, midnight UTC.
+        external("getTimeNow", (), _milliseconds_unix_epoch).
 
 // Save time of creation of syllogism
 syllogism_creation_time(0).
