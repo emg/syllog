@@ -300,11 +300,10 @@ myurlbase(_urlbase) :-
 	concat(_url, "/logsyllog/log3/?", _urlbase).
 
 sendURL(_query) :-
-	myurlbase(_urlstring1),
-	concat(_urlstring1, _query, _urlstring),
-	new(url, "java.net.URL", (_urlstring)),
-	execMethod(_urlcontent, url, "getContent", ()),
-	destroy(url).
+        myurlbase(_urlstring1),
+        concat(_urlstring1, _query, _urlstring),
+        external("visitURL", (_urlstring), _X).
+
 
 quan(1, au).
 quan(2, iu).
