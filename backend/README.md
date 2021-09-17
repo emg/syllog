@@ -37,11 +37,21 @@ collection to see if any answers have been logged.
 
    b. Use one of these URLs to dump the data as CSV files:
 
-      - Streaks:@@@
+      - The Answer3 data for the front ends logging through
+        /logsyllog/log3/ - i.e., the ones checking only the student's
+        ability to check validity / invalidity of a syllogism.
 
-      ```https://<yourwebsite.example.com>/syllog/logsyllog/dump2/@@@```
-      
-      - Answers plus aggregates:@@@
+      ```https://<yourwebsite.example.com>/syllog/logsyllog/dump3/```
 
-        ```https://<yourwebsite.example.com>/syllog/logsyllog/dump3/@@@```
+      - The Answer4 data for the front ends logging through
+        /logsyllog/log4/ - i.e., the ones helping the student to try
+        to prove the validity/invalidity through application of rules.
 
+        ```https://<yourwebsite.example.com>/syllog/logsyllog/dump4/```
+
+      For more URL possibilities, see the following file. Note that
+      you need to prefix each of these URLs with `/syllog/logsyllog/`:
+
+      ```
+      backend/Django/logsyllogsite/logapp/urls.py
+      ```
