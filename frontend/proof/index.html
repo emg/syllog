@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Prolog+CG Applet</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body>
+<h1>The Logic of Syllogisms</h1>
+<br>
+
+The classical syllogisms may be proved using the following rules. The procedure can be tested below.<br>
+<br>
+<span style="font-weight: bold;">
+Subst:</span> A universal proposition may allow a substitution in an existential proposition. <br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [All: x] (IF: ([x] -attr-&gt;
+[A]) THEN: ([x] -attr-&gt; [B]) &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; [All: x] (IF: G1 THEN: G2)<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [x] ( ([x] -attr-&gt; [A])
+&nbsp;([x] -attr-&gt; [C]) )&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [x]
+(G1&nbsp;G3)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; Ergo:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; Ergo:<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; [x] ( ([x] -attr-&gt; [B]) &nbsp;([x] -attr-&gt;
+[C]) )&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [x] (G2 G3)<br>
+<br>
+<span style="font-weight: bold;">Contra</span>: A universal proposition may be transformed into another universal proposition by contraposition.<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [All: x] (IF: ([x] -attr-&gt;
+[A]) THEN: ([x] -attr-&gt; [B])) &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; [All: x] (IF: G1 THEN: G2)<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Ergo: &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Ergo:<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [All: x] ~(IF: ([x] -attr-&gt;
+[B]) THEN: ~([x] -attr-&gt; [A])&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;[All: x] (IF: ~G2 THEN: ~G1)&nbsp; <br>
+<br>
+<span style="font-weight: bold;">Trans</span>: Two universal propositions may be combined by transition.<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [All: x] (IF: ([x] -attr-&gt;
+[A]) THEN: ([x] -attr-&gt; [B]) &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; [All: x] (IF: G1 THEN: G2)<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [All: x] (IF: ([x] -attr-&gt;
+[B]) THEN: ([x] -attr-&gt; [C])&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;[All: x] (IF: G2 THEN: G3)<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Ergo: &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Ergo:<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [All: x]&nbsp;(IF: ([x]
+-attr-&gt; [A]) THEN:&nbsp;([x] -attr-&gt; [C]) &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [All: x] (IF: G1 THEN: G3)<br>
+<br>
+<span style="font-weight: bold;">Exist</span>: An existential proposition follows from the corresponding universal proposition.<br>
+&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;[All: x] (IF: ([x]
+-attr-&gt; [A]) THEN: ([x] -attr-&gt; [B])&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [All: x] (IF: G1 THEN: G2)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Ergo: &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Ergo:<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; [x] (&nbsp;([x] -attr-&gt; [A])
+&nbsp;([x] -attr-&gt; [B])) &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;[x] (G1&nbsp;G2)<br>
+<br>
+
+<hr>
+
+<h2>Instructions</h2>
+
+<p>To start, press the "New syl" button below.</p>
+
+<p>Then, try to prove that the syllogism is valid, by pressing the
+other buttons. Continue until you have proved that the syllogism is
+valid.</p>
+
+<p></p>
+
+<div>
+  <div>
+    <button type="button" onclick="writeNewProof();">New syl</button>
+    <button type="button" onclick="applySubst();">Subst</button>
+    <button type="button" onclick="applyContra();">Contra</button>
+    <button type="button" onclick="applyTrans();">Tran</button>
+    <button type="button" onclick="applyEx();">Exist</button>
+  </div>
+</div>
+<pre id="console"></pre>
+
+<!-- The transpiled output of the PPCGJS.java source file (mvn generate-sources) -->
+<script type="text/javascript"
+	src="../target/js/bundle.js"></script>
+
+<script type="text/javascript"
+	src="main.js"></script>
+
+<hr>
+
+
+</body></html>
